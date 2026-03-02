@@ -39,16 +39,16 @@
 
     <%-- 2. Formulario principal que conecta con el Servlet --%>
     <form action="GameServlet" method="post">
-        <table border="1" style="border-collapse: collapse;">
+        <table border="5" style="border-collapse: collapse;">
             <%
                 // Recuperamos el tablero de la sesión
                 String[][] tablero = (String[][]) session.getAttribute("tablero");
                 
                 if (tablero != null) {
-                    for (int i = 0; i < 3; i++) {
+                    for (int i = 0; i < 4; i++) {
             %>
                 <tr>
-                <% for (int j = 0; j < 3; j++) { 
+                <% for (int j = 0; j < 4; j++) { 
                     String estado = tablero[i][j]; // Puede ser "x", "o" o "null"
                     
                     // Bloqueamos el botón si la celda ya tiene dueño o si ya hay un ganador

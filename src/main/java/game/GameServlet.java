@@ -1,6 +1,5 @@
 package game;
-
-import jakarta.servlet.ServletException;¿
+import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -41,8 +40,8 @@ public class GameServlet extends HttpServlet {
     }
 
     private void moverMaquina(String[][] tablero) {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
                 if (tablero[i][j].equals("null")) {
                     tablero[i][j] = "o";
                     System.out.println("DEBUG: Máquina puso 'o' en: " + i + "," + j);
@@ -53,9 +52,9 @@ public class GameServlet extends HttpServlet {
     }
 
     private void inicializarJuego(HttpSession session) {
-        String[][] tablero = new String[3][3];
-        for (int i = 0; i < 3; i++)
-            for (int j = 0; j < 3; j++) tablero[i][j] = "null";
+        String[][] tablero = new String[4][4];
+        for (int i = 0; i < 4; i++)
+            for (int j = 0; j < 4; j++) tablero[i][j] = "null";
         session.setAttribute("tablero", tablero);
     }
 
